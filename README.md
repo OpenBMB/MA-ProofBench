@@ -16,7 +16,7 @@ We introduce **MA-ProofBench**, to the best of our knowledge, the first formal b
 | **Level I**  | Undergraduate  | Basic Textbook Exercises                 | 100   |
 | **Level II** | Ph.D.          | Exam Problems from Top-Tier Universities | 100   |
 
-The problems span **6 core topics** and **27 subcategories**, including *measure and integration theory*, *complex analysis*, and *functional analysis*. MA-ProofBench targets areas that are underrepresented in prior benchmarks and require deep reasoning about continuity, limits, and topological structures. Each problem is built through a human-led, LLM-assisted formalization pipeline with independent expert blind review to ensure mathematical fidelity.
+The problems span **6 core topics** and **27 subcategories**, including *measure and integration theory*, *complex analysis*, and *functional analysis*, among other categories. MA-ProofBench targets areas that are underrepresented in prior benchmarks and require deep reasoning about continuity, limits, and topological structures. Each problem is built through a human-led, LLM-assisted formalization pipeline with independent expert blind review to ensure mathematical fidelity.
 
 
 
