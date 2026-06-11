@@ -42,6 +42,10 @@ Problems are classified following the **Mathematics Subject Classification (MSC)
 
 ## Evaluation
 
+<p align="center">
+  <img src="assets/results.png" alt="MA-ProofBench evaluation results" width="90%">
+</p>
+
 The `evaluation/` package generates proofs via an OpenAI-compatible API and verifies them with [Kimina Lean Server](https://github.com/project-numina/kimina-lean-server). 
 
 First, install the evaluation dependencies:

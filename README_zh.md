@@ -38,6 +38,10 @@
 
 ## 评测
 
+<p align="center">
+  <img src="assets/results.png" alt="MA-ProofBench 评测结果" width="90%">
+</p>
+
 `evaluation/` 包通过兼容 OpenAI 的 API 生成证明，并使用 [Kimina Lean Server](https://github.com/project-numina/kimina-lean-server) 进行验证。
 
 首先安装评测所需依赖：
