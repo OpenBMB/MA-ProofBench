@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://huggingface.co/datasets/openbmb/MA-ProofBench"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-FFD21E?style=flat"></a>
-  <a href="#"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-Paper-B31B1B?style=flat&logo=arxiv&logoColor=white"></a>
+  <a href="https://arxiv.org/abs/2606.13782"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-Paper-B31B1B?style=flat&logo=arxiv&logoColor=white"></a>
 </p>
 
 我们提出 **MA-ProofBench**——据我们所知，这是首个用于评测大语言模型（LLM）在**数学分析**定理证明能力的形式化基准。它包含 **200** 道经过严格形式化的定理证明题，基于 [Lean 4](https://leanprover.github.io/)（v4.28.0），并划分为两个难度层级：
@@ -100,7 +100,11 @@ python -m evaluation.main --mode eval \
 @article{ma-proofbench,
   title={MA-ProofBench: A Two-Tiered Evaluation of LLMs for Theorem Proving in Mathematical Analysis},
   author={Lushi Pu and Weiming Zhang and Xinheng Xie and Zixuan Fu and Bingxiang He and Hongya Lyu and Xin Li and Jie Zhou and Yudong Wang},
-  year={2026}
+  year={2026},
+  eprint={2606.13782},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+  url={https://arxiv.org/abs/2606.13782}, 
 }
 ```
 
