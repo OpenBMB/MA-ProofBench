@@ -2,6 +2,8 @@ import Mathlib
 
 open MeasureTheory
 
+variable {X : Type*} [MeasurableSpace X] (μ : Measure X)
+
 /--
 Suppose $\mu$ is a positive measure on $X$ and $f:X\to(0,\infty)$ satisfies $\int_X f\,d\mu=1$. Prove, for every $E\subset X$ with $0<\mu(E)<\infty$, that
 
@@ -9,9 +11,6 @@ Suppose $\mu$ is a positive measure on $X$ and $f:X\to(0,\infty)$ satisfies $\in
 \int_E (\log f)\,d\mu \le \mu(E)\log\frac{1}{\mu(E)}
 \]
 -/
-
-variable {X : Type*} [MeasurableSpace X] (μ : Measure X)
-
 theorem ma_proofbench_l1_82 (f : X → ℝ)
     (hf_pos : ∀ x, 0 < f x)
     (hf_int : Integrable f μ)

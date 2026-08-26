@@ -2,6 +2,8 @@ import Mathlib
 
 open MeasureTheory
 
+noncomputable section
+
 /--
 Let $H$ be a separable Hilbert space and $\{e_j\}_{j=1}^\infty$ be an orthonormal basis. A bounded operator $A$ on $H$ is called Hilbert--Schmidt if
 \[
@@ -13,9 +15,6 @@ V u(x) = \int_0^x u(y) \, dy, \quad x \in [0, 1],
 \]
 is Hilbert--Schmidt.
 -/
-
-noncomputable section
-
 def IsHilbertSchmidtOperator
     {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
     (A : H →L[ℂ] H) : Prop :=

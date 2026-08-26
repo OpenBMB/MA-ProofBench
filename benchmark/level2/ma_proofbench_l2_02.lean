@@ -2,6 +2,8 @@ import Mathlib
 
 open MeasureTheory
 
+noncomputable section
+
 /--
 Let $f \in L^1([0, 1])$ and let $1 < p < \infty$. Prove that $f \in L^p([0, 1])$ if and only if
 \[
@@ -9,9 +11,6 @@ Let $f \in L^1([0, 1])$ and let $1 < p < \infty$. Prove that $f \in L^p([0, 1])$
 \]
 where the supremum is taken over all finite partitions of $[0, 1]$ into intervals $\{I_j\}$.
 -/
-
-noncomputable section
-
 def IsPartition01 {n : ℕ} (t : Fin (n + 1) → ℝ) : Prop :=
   t 0 = 0 ∧ t (Fin.last n) = 1 ∧ StrictMono t
 
