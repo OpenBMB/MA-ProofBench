@@ -1,7 +1,7 @@
 import Mathlib
 
 /--
-Suppose $F$ is of bounded variation and continuous. Prove that $F=F_1-F_2$, where both $F_1$ and $F_2$ are monotonic and continuous.
+Suppose $F$ is of bounded variation and continuous. Prove that $F=F_1-F_2$, where both $F_1$ and $F_2$ are monotonically non-decreasing and continuous.
 -/
 
 theorem ma_proofbench_l1_33 {F : ℝ → ℝ} (hF_bv : BoundedVariationOn F (Set.univ : Set ℝ))

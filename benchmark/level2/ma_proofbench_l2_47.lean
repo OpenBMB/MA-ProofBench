@@ -19,7 +19,7 @@ theorem ma_proofbench_l2_47
         ∀ p q : ENNReal,
           1 ≤ p → p ≤ q → q ≤ ⊤ → p ≤ 2 →
             ∀ f : SchwartzMap (EuclideanSpace ℝ (Fin n)) ℂ,
-              Function.support (fun ξ : EuclideanSpace ℝ (Fin n) => (𝓕 f) ξ) ⊆ E →
+              tsupport (fun ξ : EuclideanSpace ℝ (Fin n) => (𝓕 f) ξ) ⊆ E →
                 ‖f.toLp q
                     (MeasureTheory.volume : MeasureTheory.Measure (EuclideanSpace ℝ (Fin n)))‖ ≤
                   C *

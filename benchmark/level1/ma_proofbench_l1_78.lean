@@ -9,5 +9,5 @@ Suppose $f:D\to\mathbb{C}$ is holomorphic. Show that the diameter $d=\sup_{z,w\i
 -/
 
 theorem ma_proofbench_l1_78 (f : ℂ → ℂ) (hf : DifferentiableOn ℂ f (Metric.ball (0 : ℂ) 1)) :
-   (2 * ‖deriv f 0‖).toNNReal ≤ Metric.ediam (f '' (Metric.ball (0 : ℂ) 1)) := by
+    ENNReal.ofReal (2 * ‖deriv f 0‖) ≤ Metric.ediam (f '' (Metric.ball (0 : ℂ) 1)) := by
   sorry

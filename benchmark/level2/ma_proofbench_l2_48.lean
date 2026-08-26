@@ -11,14 +11,14 @@ all $u\in C^{\infty}_{c}(\mathbb{R}^{2})$, there exists some absolute constant $
 \]
 -/
 
-theorem ma_proofbench_l2_48
-  (ω : EuclideanSpace ℝ (Fin 2) → ℝ)
-  (hω_pos : ∀ x : EuclideanSpace ℝ (Fin 2), 0 < ω x)
-  (hω_C1 : ContDiff ℝ 1 ω)
-  (hω_Linf : eLpNorm (fun x : EuclideanSpace ℝ (Fin 2) => ‖fderiv ℝ ω x‖ / ω x) ⊤ volume ≤ 1) :
+theorem ma_proofbench_l2_48 :
   ∃ C : ℝ, 0 < C ∧
-    ∀ u : EuclideanSpace ℝ (Fin 2) → ℝ, ContDiff ℝ (⊤ : ℕ∞) u → HasCompactSupport u →
-      ∫ x : EuclideanSpace ℝ (Fin 2), (u x) ^ (4 : ℕ) * ω x ≤
-        C * (ENNReal.toReal (eLpNorm u 2 volume)) ^ (2 : ℕ) *
-          ∫ x : EuclideanSpace ℝ (Fin 2), (‖fderiv ℝ u x‖ ^ (2 : ℕ) + |u x| ^ (2 : ℕ)) * ω x := by
+    ∀ ω : EuclideanSpace ℝ (Fin 2) → ℝ,
+      (∀ x : EuclideanSpace ℝ (Fin 2), 0 < ω x) →
+      ContDiff ℝ 1 ω →
+      eLpNorm (fun x : EuclideanSpace ℝ (Fin 2) => ‖fderiv ℝ ω x‖ / ω x) ⊤ volume ≤ 1 →
+      ∀ u : EuclideanSpace ℝ (Fin 2) → ℝ, ContDiff ℝ (⊤ : ℕ∞) u → HasCompactSupport u →
+        ∫ x : EuclideanSpace ℝ (Fin 2), (u x) ^ (4 : ℕ) * ω x ≤
+          C * (ENNReal.toReal (eLpNorm u 2 volume)) ^ (2 : ℕ) *
+            ∫ x : EuclideanSpace ℝ (Fin 2), (‖fderiv ℝ u x‖ ^ (2 : ℕ) + |u x| ^ (2 : ℕ)) * ω x := by
   sorry

@@ -11,6 +11,6 @@ Prove that $D_1f$ and $D_2f$ are bounded functions in $R^2$.
 
 theorem ma_proofbench_l1_56 (f : ℝ × ℝ → ℝ) (h0 : f (0, 0) = 0)
     (hxy : ∀ p : ℝ × ℝ, p ≠ (0, 0) → f p = (p.1 ^ 3) / (p.1 ^ 2 + p.2 ^ 2)) :
-    (∃ M : ℝ, ∀ p : ℝ × ℝ, ‖(fderiv ℝ f p) (1, 0)‖ ≤ M) ∧
-    (∃ M : ℝ, ∀ p : ℝ × ℝ, ‖(fderiv ℝ f p) (0, 1)‖ ≤ M) := by
+    (∃ M : ℝ, ∀ x y : ℝ, ‖deriv (fun t => f (t, y)) x‖ ≤ M) ∧
+    (∃ M : ℝ, ∀ x y : ℝ, ‖deriv (fun t => f (x, t)) y‖ ≤ M) := by
   sorry

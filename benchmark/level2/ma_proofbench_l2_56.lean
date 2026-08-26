@@ -12,9 +12,13 @@ theorem ma_proofbench_l2_56
     (f : ℕ → ℝ × ℝ × ℝ → ℝ)
     (hC1 : ∀ n : ℕ, ContDiff ℝ 1 (f n))
     (henergy : ∀ n : ℕ,
+      MeasureTheory.Integrable
+      (fun x : ℝ × ℝ × ℝ => ‖f n x‖ ^ 2 + ‖fderiv ℝ (f n) x‖ ^ 2) MeasureTheory.volume ∧
       (∫ x : ℝ × ℝ × ℝ,
         (‖f n x‖ ^ 2 + ‖fderiv ℝ (f n) x‖ ^ 2) ∂MeasureTheory.volume) ≤ 1) :
     ∃ C : ℝ, 0 ≤ C ∧
       ∀ n : ℕ,
+        MeasureTheory.Integrable
+        (fun p : ℝ × ℝ => ‖f n (p.1, p.2, 0)‖ ^ 2) MeasureTheory.volume ∧
         (∫ p : ℝ × ℝ, ‖f n (p.1, p.2, 0)‖ ^ 2 ∂MeasureTheory.volume) ≤ C := by
   sorry

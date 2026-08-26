@@ -11,12 +11,12 @@ $u\in C^{\infty}_{c}(\mathbb{R})$, there exists some absolute constant $C$ s.t.,
 \]
 -/
 
-theorem ma_proofbench_l2_67
-  (θ : ℝ → ℝ) (hθ_pos : ∀ x : ℝ, 0 < θ x)
-  (hθ_C1 : ContDiff ℝ 1 θ)
-  (hθ_Linf : eLpNorm (fun x : ℝ => deriv θ x / θ x) ⊤ volume ≤ 1) :
-  ∃ C : ℝ, 0 < C ∧ ∀ u : ℝ → ℝ, ContDiff ℝ (⊤ : ℕ∞) u → HasCompactSupport u →
-    ∫ x : ℝ, (u x) ^ (6 : ℕ) * θ x ≤
-      C * (ENNReal.toReal (eLpNorm u 2 volume)) ^ (4 : ℕ) *
-        ∫ x : ℝ, (|deriv u x| ^ (2 : ℕ) + |u x| ^ (2 : ℕ)) * θ x := by
+theorem ma_proofbench_l2_67 :
+    ∃ C : ℝ, 0 < C ∧
+      ∀ (θ : ℝ → ℝ), (∀ x : ℝ, 0 < θ x) → ContDiff ℝ 1 θ →
+        eLpNorm (fun x : ℝ => deriv θ x / θ x) ⊤ volume ≤ 1 →
+        ∀ u : ℝ → ℝ, ContDiff ℝ (⊤ : ℕ∞) u → HasCompactSupport u →
+          ∫ x : ℝ, (u x) ^ (6 : ℕ) * θ x ≤
+            C * (ENNReal.toReal (eLpNorm u 2 volume)) ^ (4 : ℕ) *
+              ∫ x : ℝ, (|deriv u x| ^ (2 : ℕ) + |u x| ^ (2 : ℕ)) * θ x := by
   sorry

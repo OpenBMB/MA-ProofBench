@@ -9,7 +9,7 @@ where $L^n$ denotes the Lebesgue measure.
 -/
 
 theorem ma_proofbench_l2_03
-    {n : ℕ} (U : Set (EuclideanSpace ℝ (Fin n))) (hU_open : IsOpen U)
+    {n : ℕ} (hn : 0 < n) (U : Set (EuclideanSpace ℝ (Fin n))) (hU_open : IsOpen U)
     (hU_bounded : Bornology.IsBounded U) (δ : ℝ) (hδ : 0 < δ) :
     ∃ x : ℕ → EuclideanSpace ℝ (Fin n),
       ∃ ρ : ℕ → ℝ,

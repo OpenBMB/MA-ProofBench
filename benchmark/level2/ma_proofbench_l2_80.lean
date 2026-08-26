@@ -30,8 +30,8 @@ theorem ma_proofbench_l2_80
     ∀ f : Rn n → ℝ,
       ContDiffOn ℝ ⊤ f ((ClosedUnitBall n)ᶜ) →
       HasCompactSupport f →
+      tsupport f ⊆ (ClosedUnitBall n)ᶜ →
       IsRadial f →
-      (∀ x : Rn n, x ∈ ClosedUnitBall n → f x = 0) →
       eLpNorm f q volume ≤
         ENNReal.ofReal C *
           (eLpNorm f p volume +

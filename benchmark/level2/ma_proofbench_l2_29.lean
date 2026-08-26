@@ -20,7 +20,8 @@ C_{p}:=\int_{0}^{\infty}\frac{dx}{x^{1/p}(1+x)}.
 
 theorem ma_proofbench_l2_29 (p : ℝ) (hp : 1 < p) (T : (ℝ → ℝ) → (ℝ → ℝ))
   (hT : ∀ g : ℝ → ℝ, ∀ x : ℝ, T g x = ∫ y in Set.Ici (0 : ℝ), g y / (x + y))
-  (f : ℝ → ℝ) (hf_cont : Continuous f) (hf_cpt : HasCompactSupport f)
+  (f : ℝ → ℝ) (hf_cont : ContinuousOn f (Set.Ici (0 : ℝ)))
+  (hf_cpt : HasCompactSupport f)
   (hf_support : Function.support f ⊆ Set.Ici (0 : ℝ))
   (Cp : ℝ) (hCp : Cp = ∫ x in Set.Ici (0 : ℝ), 1 / (x ^ (1 / p) * (1 + x))) :
   eLpNorm (T f) (ENNReal.ofReal p) (volume.restrict (Set.Ici (0 : ℝ))) ≤

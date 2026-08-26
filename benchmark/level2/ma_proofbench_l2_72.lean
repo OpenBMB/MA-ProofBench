@@ -21,6 +21,7 @@ abbrev R2 : Type := EuclideanSpace ℝ (Fin 2)
 abbrev R3 : Type := EuclideanSpace ℝ (Fin 3)
 
 abbrev LowerHalfSpace : Set R3 := {p : R3 | p 2 ≤ 0}
+abbrev OpenLowerHalfSpace : Set R3 := {p : R3 | p 2 < 0}
 
 noncomputable def point3 (x : R2) (z : ℝ) : R3 :=
   EuclideanSpace.single (0 : Fin 3) (x 0) +
@@ -30,12 +31,13 @@ noncomputable def point3 (x : R2) (z : ℝ) : R3 :=
 theorem ma_proofbench_l2_72
   (φ : SchwartzMap R2 ℝ)
   (u : R3 → ℝ)
-  (hu_harmonic : InnerProductSpace.HarmonicOnNhd u LowerHalfSpace)
+  (hu_harmonic : InnerProductSpace.HarmonicOnNhd u OpenLowerHalfSpace)
+  (hu_cont : ContinuousOn u LowerHalfSpace)
   (hu_boundary : ∀ x : R2, u (point3 x 0) = φ x)
   (hu_decay :
-    Filter.Tendsto (fun z : ℝ => sSup (Set.range fun x : R2 => |u (point3 x z)|))
-      Filter.atBot (nhds 0)) :
+    ∀ ε : ℝ, 0 < ε →
+      ∀ᶠ z : ℝ in Filter.atBot, ∀ x : R2, |u (point3 x z)| < ε) :
   ∃ C : ℝ, 0 < C ∧
     ∀ z : ℝ, z ≤ 0 →
-      sSup (Set.range fun x : R2 => |u (point3 x z)|) ≤ C * (1 + |z|)⁻¹ := by
+      ∀ x : R2, |u (point3 x z)| ≤ C * (1 + |z|)⁻¹ := by
   sorry
